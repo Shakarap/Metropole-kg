@@ -21,7 +21,7 @@ Widget selectSize({required bool themeFlag, required BuildContext context}) {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "US 8",
+                "39",
                 style: CustomTextWidget.bodyText2(
                   color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                 ),
@@ -54,7 +54,7 @@ Widget selectSize({required bool themeFlag, required BuildContext context}) {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "US 9",
+                "40",
                 style: CustomTextWidget.bodyText2(
                   color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                 ),
@@ -87,7 +87,7 @@ Widget selectSize({required bool themeFlag, required BuildContext context}) {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "US 10",
+                "41",
                 style: CustomTextWidget.bodyText2(
                   color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                 ),
@@ -120,7 +120,7 @@ Widget selectSize({required bool themeFlag, required BuildContext context}) {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "US 11",
+                "43",
                 style: CustomTextWidget.bodyText2(
                   color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                 ),
