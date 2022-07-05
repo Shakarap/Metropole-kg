@@ -65,6 +65,7 @@ class SignUpScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userEmailController,
+                            keyboardType: TextInputType.emailAddress,
                             hintText: 'email жаз',
                             validator: (val) =>
                                 !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
@@ -81,6 +82,7 @@ class SignUpScreen extends StatelessWidget {
                               authNotifier(false)
                                   .checkPasswordStrength(password: val);
                             },
+                            obscureText: true,
                             textEditingController: userPassController,
                             hintText: 'Сыр сөздү жаз',
                             validator: (val) =>

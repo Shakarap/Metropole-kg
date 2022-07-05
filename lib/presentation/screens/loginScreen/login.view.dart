@@ -54,10 +54,11 @@ class LoginScreen extends StatelessWidget {
                           child: CustomTextField.customTextField(
                             textEditingController: userEmailController,
                             hintText: 'Сиздин email',
+                            keyboardType: TextInputType.emailAddress,
                             validator: (val) =>
                                 !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
                                         .hasMatch(val!)
-                                    ? 'Сиздин email'
+                                    ? 'Ката email'
                                     : null,
                           ),
                         ),
@@ -67,9 +68,10 @@ class LoginScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userPassController,
+                            obscureText: true,
                             hintText: 'Сыр сөзүңүз',
                             validator: (val) =>
-                                val!.isEmpty ? 'Сыр сөзүңүз' : null,
+                                val!.isEmpty ? 'Ката сыр соз' : null,
                           ),
                         )
                       ],

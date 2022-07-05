@@ -7,13 +7,16 @@ class CustomTextField {
       {required TextEditingController textEditingController,
       required String hintText,
       String? Function(String?)? validator,
+      TextInputType? keyboardType,
+      bool? obscureText,
       Function(String)? onChanged}) {
     return TextFormField(
-      keyboardType: TextInputType.visiblePassword,
+      keyboardType: keyboardType ?? TextInputType.visiblePassword,
       style: const TextStyle(
         color: Colors.black,
         fontFamily: AppFonts.contax,
       ),
+      obscureText: obscureText ?? false,
       onChanged: onChanged,
       controller: textEditingController,
       validator: validator,
