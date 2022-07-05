@@ -47,15 +47,17 @@ class EditProfileScreen extends StatelessWidget {
                   children: [
                     CustomTextField.customTextField(
                       textEditingController: addressController,
-                      hintText: 'Дарек жаз',
-                      validator: (val) => val!.isEmpty ? 'Дарек жаз' : null,
+                      hintText: 'Дарегиңиз',
+                      validator: (val) =>
+                          val!.isEmpty ? 'Даректи жазыңыз' : null,
                     ),
                     vSizedBox3,
                     CustomTextField.customTextField(
                       textEditingController: numberController,
-                      hintText: 'Номур жаз',
-                      validator: (val) =>
-                          !RegExp(patttern).hasMatch(val!) ? 'Номур жаз' : null,
+                      hintText: 'Номуруңуз',
+                      validator: (val) => !RegExp(patttern).hasMatch(val!)
+                          ? 'Номурду жазыңыз'
+                          : null,
                     ),
                     vSizedBox3,
                     MaterialButton(

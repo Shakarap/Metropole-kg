@@ -19,6 +19,7 @@ class _GameScreenState extends State<GameScreen> {
   FortuneWheelController<int> fortuneWheelController = FortuneWheelController();
   FortuneWheelChild? currentWheelChild;
   int currentBalance = 0;
+  int count = 0;
 
   @override
   void initState() {
@@ -35,6 +36,7 @@ class _GameScreenState extends State<GameScreen> {
 
       setState(() {
         currentBalance += fortuneWheelController.value!.value;
+        count = count + 1;
       });
     });
 
@@ -45,6 +47,7 @@ class _GameScreenState extends State<GameScreen> {
 
       setState(() {
         currentBalance = balance ?? 0;
+        count = 0;
       });
     }();
 
@@ -53,7 +56,7 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!fortuneWheelController.isAnimating) {
+    if (!fortuneWheelController.isAnimating && count > 0) {
       final userNotifier = Provider.of<UserNotifier>(context, listen: false);
       userNotifier.updateUserBalance(
           balance: currentBalance, userEmail: userNotifier.getUserEmail!);

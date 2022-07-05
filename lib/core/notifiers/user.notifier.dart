@@ -87,7 +87,7 @@ class UserNotifier with ChangeNotifier {
   }) async {
     try {
       var userData = await _userAPI.getUserDetails(userEmail: userEmail);
-      final balance = jsonDecode(userData)["data"]["balance"];
+      final balance = jsonDecode(userData)["data"]["user"]["balance"];
       print(balance);
       return balance;
       // var response = UserDetails.fromJson(jsonDecode(userData));
