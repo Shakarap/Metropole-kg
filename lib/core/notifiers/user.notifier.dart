@@ -57,6 +57,7 @@ class UserNotifier with ChangeNotifier {
       } else {
         userEmail = _data.email;
         userName = _data.username;
+        balance = _data.balance;
         notifyListeners();
       }
     } on SocketException catch (_) {
@@ -75,8 +76,6 @@ class UserNotifier with ChangeNotifier {
       var userData = await _userAPI.updateUserBalance(
           userEmail: userEmail, balance: balance);
 
-      print(userData);
-
       return 0;
     } on SocketException catch (_) {
       throw 'Error';
@@ -88,20 +87,25 @@ class UserNotifier with ChangeNotifier {
   }) async {
     try {
       var userData = await _userAPI.getUserDetails(userEmail: userEmail);
-      var response = UserDetails.fromJson(jsonDecode(userData));
-      final _data = response.data;
-      final _filled = response.filled;
-      final _received = response.received;
+      final balance = jsonDecode(userData)["data"]["balance"];
+      print(balance);
+      return balance;
+      // var response = UserDetails.fromJson(jsonDecode(userData));
+      // final _data = response.data;
+      // final _filled = response.filled;
+      // final _received = response.received;
 
-      if (_received && _filled) {
-        userAddress = _data.userAddress;
-        userPhoneNumber = _data.userPhoneNo;
-        userEmail = _data.user.useremail;
-        userName = _data.user.username;
-        balance = _data.user.balance;
+      // print(_data.user.balance);
 
-        return balance;
-      }
+      // if (_received && _filled) {
+      //   userAddress = _data.userAddress;
+      //   userPhoneNumber = _data.userPhoneNo;
+      //   userEmail = _data.user.useremail;
+      //   userName = _data.user.username;
+      //   balance = _data.user.balance;
+
+      //   return balance;
+      // }
 
       return 0;
     } on SocketException catch (_) {

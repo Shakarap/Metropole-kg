@@ -25,17 +25,20 @@ class UserData {
     required this.username,
     required this.iat,
     required this.exp,
+    required this.balance,
   });
   late final String email;
   late final String username;
   late final int iat;
   late final int exp;
+  late final int balance;
 
   UserData.fromJson(Map<String, dynamic> json) {
     email = json['email'];
     username = json['username'];
     iat = json['iat'];
     exp = json['exp'];
+    balance = json['balance'];
   }
 
   Map<String, dynamic> toJson() {
@@ -44,6 +47,7 @@ class UserData {
     _data['username'] = username;
     _data['iat'] = iat;
     _data['exp'] = exp;
+    _data['balance'] = balance;
     return _data;
   }
 }

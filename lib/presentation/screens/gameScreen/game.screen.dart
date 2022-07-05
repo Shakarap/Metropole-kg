@@ -40,8 +40,11 @@ class _GameScreenState extends State<GameScreen> {
 
     () async {
       final userNotifier = Provider.of<UserNotifier>(context, listen: false);
+      final balance =
+          await userNotifier.getUserBalance(userEmail: userNotifier.userEmail!);
+
       setState(() {
-        currentBalance = userNotifier.getBalance ?? 0;
+        currentBalance = balance ?? 0;
       });
     }();
 
